@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: cicdlic_src_snf
+    database: DBT_CICD_LICRAW_DB
+    schema: DBT_CICD_LICRAW_SC
+    tables:
+      - name: CLAIMS
+      - name: COUNTRIES
+      - name: CURRENCIES
+      - name: CUSTOMERS
+      - name: INSURANCE_POLICIES
+      - name: NOMINEES
+      - name: POLICY_TYPES
+      - name: PREMIUM_DUE_DATES
+      - name: PREMIUM_PAYMENTS
