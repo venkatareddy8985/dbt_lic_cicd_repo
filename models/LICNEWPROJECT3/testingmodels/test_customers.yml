@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: b_c_l_customers
+    columns:
+      - name: customer_id
+        tests:
+          -  accepted_values:
+              values: ['C001','C010','C015','C020']
+      - name: customer_name
+        tests:
+          -  accepted_values:
+              values: ['Anita Sharma','Priya Reddy','Meera Kapoor','Kiran Mehta']
+      - name: city
+        tests:
+          - accepted_values:
+              values: ['usa','aus','uk','thailand']
+      - name: email
+        tests:
+          - validate_email    
+       

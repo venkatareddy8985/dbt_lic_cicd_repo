@@ -14,3 +14,4 @@ sources:
       - name: POLICY_TYPES
       - name: PREMIUM_DUE_DATES
       - name: PREMIUM_PAYMENTS
+      - name: CLAIMS_DUPLICATE
