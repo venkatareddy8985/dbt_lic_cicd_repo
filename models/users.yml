@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: cicdlic_src_snf
+    database: LIC_CICD_DB
+    schema: LIC_CICD_SC
+    tables:
+      - name: users_dup

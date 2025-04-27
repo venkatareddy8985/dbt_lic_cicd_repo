@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: s_c_l_testing
+    columns:
+      - name: policy_id
+        tests:
+           - not_null
+           - unique
+      - name: CLAIM_ID
+        tests:
+          - not_null
+          - unique
+      - name: CLAIM_DATE
+        tests:
+          - not_null
+          - unique
+      - name: CLAIM_AMOUNT
+        tests:
+          - not_null
+          - unique
+      - name: REASON
+        tests:
+          - not_null
+          - unique
+      - name: STATUS
+        tests:
+          - not_null
+          - unique
+          - accepted_values:
+              values: ['Approved']
+  
