@@ -1,7 +1,6 @@
 {{
     config(
-        materialized='table',
-        transient=false
+        materialized='table'
     )
 }}
 with consu_finaldata_cte as(

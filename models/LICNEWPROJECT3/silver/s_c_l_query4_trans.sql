@@ -1,4 +1,4 @@
-----4.Premium Collection Trend (Monthly): s_query4
+----4.Premium Collection Trend (Monthly): s_query4_trans
 
 with premium_payments_cte as(
     select date_trunc(month,payment_date) as month,
