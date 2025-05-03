@@ -1,0 +1,23 @@
+
+
+version: 2
+
+sources:
+  - name: incre_lic_src
+    database: DBT_INC_LIC_DB
+    schema: DBT_INC_LIC_SC
+    tables:
+      - name: STG_CLAIMS
+      - name: STG_COUNTRIES
+      - name: STG_CURRENCIES
+      - name: STG_CUSTOMERS
+      - name: STG_INSURANCE_POLICIES
+      - name: STG_NOMINEES
+      - name: STG_POLICY_TYPES
+      - name: STG_PREMIUM_DUE_DATES
+      - name: STG_PREMIUM_PAYMENTS
+
+
+
+
+
