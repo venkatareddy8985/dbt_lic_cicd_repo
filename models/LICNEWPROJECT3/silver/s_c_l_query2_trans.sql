@@ -2,15 +2,15 @@
 
 with insurance_policies_cte as(
     select policy_id,customer_id,policy_type,policy_name
-    from {{ ref('b_c_l_insurance_policies') }}
+    from {{ ref('brn_lic_stg_insurance_policies') }}
 ),
 policy_types_cte as(
     select policy_type,description
-    from {{ ref('b_c_l_policy_types') }}
+    from {{ ref('brn_lic_stg_policy_types') }}
 ),
 premium_payments_cte as(
     select payment_id,policy_id,payment_date,amount_paid,payment_mode,status
-    from {{ ref('b_c_l_premium_payments') }}
+    from {{ ref('brn_lic_stg_premium_payments') }}
 ),
 joins_cte as(
     select  ip.policy_type,

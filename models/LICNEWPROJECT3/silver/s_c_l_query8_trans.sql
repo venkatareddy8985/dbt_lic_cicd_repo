@@ -1,12 +1,12 @@
 ---8.Total premium paid by each customer
 with custome_cte as(
-    select * from {{ ref('b_c_l_customers') }}
+    select * from {{ ref('brn_lic_stg_customers') }}
 ),
 insurance_cte as(
-    select * from {{ ref('b_c_l_insurance_policies') }}
+    select * from {{ ref('brn_lic_stg_insurance_policies') }}
 ),
 premium_cte as(
-    select * from {{ ref('b_c_l_premium_payments') }}
+    select * from {{ ref('brn_lic_stg_premium_payments') }}
 ),
 joins_cte as(
 SELECT C.CUSTOMER_NAME, SUM(PP.AMOUNT_PAID) AS TOTAL_PAID

@@ -1,18 +1,18 @@
 ---6.Convert Claim Amounts to INR Using Latest Exchange Rate from the Currencies
 with claims_cte as(
-    select * from {{ ref('b_c_l_claims') }}
+    select * from {{ ref('brn_lic_stg_claims') }}
 ),
 insurancepolicies_cte as(
-    select*from {{ ref('b_c_l_insurance_policies') }}
+    select*from {{ ref('brn_lic_stg_insurance_policies') }}
 ),
 customers_cte as(
-    select*from {{ ref('b_c_l_customers') }}
+    select*from {{ ref('brn_lic_stg_customers') }}
 ),
 countries_cte as(
-    select*from {{ ref('b_c_l_countries') }}
+    select*from {{ ref('brn_lic_stg_countries') }}
 ),
 currencies_cte as(
-    select*from {{ ref('b_c_l_currencies') }}
+    select*from {{ ref('brn_lic_stg_currencies') }}
 ),
 joins_query6_cte as(
     SELECT 

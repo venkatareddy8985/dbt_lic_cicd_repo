@@ -2,7 +2,7 @@
 
 with claim_cte as(
     select policy_id,sum(claim_amount) as total_amount
-    from {{ ref('b_c_l_claims') }}
+    from {{ ref('brn_lic_stg_claims') }}
     group by policy_id
 )
 select*from claim_cte

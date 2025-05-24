@@ -1,13 +1,13 @@
 ---14.Monthly premium due amount by customer
 
 with customers_cte as(
-    select*from {{ ref('b_c_l_customers') }}
+    select*from {{ ref('brn_lic_stg_customers') }}
 ),
 insurancepolicies_cte as(
-    select*from {{ ref('b_c_l_insurance_policies') }}
+    select*from {{ ref('brn_lic_stg_insurance_policies') }}
 ),
 premium_due_dates_cte as(
-    select *from {{ ref('b_c_l_premium_due_dates') }}
+    select *from {{ ref('brn_lic_stg_premium_due_dates') }}
 ),
 joins_query14_cte as(
     SELECT C.CUSTOMER_NAME, DATE_TRUNC('month', PD.DUE_DATE) AS MONTH, SUM(PD.DUE_AMOUNT) AS TOTAL_DUE

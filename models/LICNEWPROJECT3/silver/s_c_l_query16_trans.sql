@@ -1,13 +1,13 @@
 ---16.Rank policies by total premium paid per customer
 
 with customers_cte as(
-    select*from {{ ref('b_c_l_customers') }}
+    select*from {{ ref('brn_lic_stg_customers') }}
 ),
 insurancepolicies_cte as(
-    select*from {{ ref('b_c_l_insurance_policies') }}
+    select*from {{ ref('brn_lic_stg_insurance_policies') }}
 ),
 Premium_Payments_cte as(
-    select*from {{ ref('b_c_l_premium_payments') }}
+    select*from {{ ref('brn_lic_stg_premium_payments') }}
 ),
 joins_query16_cte as(
     SELECT C.CUSTOMER_NAME,IP.POLICY_NAME,SUM(PP.AMOUNT_PAID) AS TOTAL_PAID,

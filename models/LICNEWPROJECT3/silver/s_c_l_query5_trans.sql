@@ -2,7 +2,7 @@
 
 with nominees_cte as(
     select policy_id,count(nominee_id) as num_nom
-    from {{ ref('b_c_l_nominees') }}
+    from {{ ref('brn_lic_stg_nominees') }}
     group by policy_id having count(nominee_id)>1
 )
 select*from nominees_cte

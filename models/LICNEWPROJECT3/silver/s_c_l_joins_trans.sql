@@ -46,16 +46,16 @@ joins1_cte as(
            dd.due_id,dd.due_date,dd.due_amount,dd.status as statusdd,dd.remarks,
            co.country_name,
            cr.currency_name,cr.exchange_rate_to_inr,cr.last_updated
-    from insurance_policies_cte as ip join customers_cte as cu
-         on ip.customer_id = cu.customer_id join policy_types_cte as pt
-         on ip.policy_type = pt.policy_type join premium_payments_cte as pp
-         on ip.policy_id = pp.policy_id join claims_cte as cl 
-         on ip.policy_id = cl.policy_id join nominees_cte as nm
-         on ip.policy_id = nm.policy_id join premium_due_dates_cte as dd 
-         on ip.policy_id = dd.policy_id join countries_cte as co
-         on cu.country_code = co.country_code join currencies_cte as cr
+    from insurance_policies_cte as ip left outer join customers_cte as cu
+         on ip.customer_id = cu.customer_id left outer join policy_types_cte as pt
+         on ip.policy_type = pt.policy_type left outer join premium_payments_cte as pp
+         on ip.policy_id = pp.policy_id left outer join claims_cte as cl 
+         on ip.policy_id = cl.policy_id left outer join nominees_cte as nm
+         on ip.policy_id = nm.policy_id left outer join premium_due_dates_cte as dd 
+         on ip.policy_id = dd.policy_id left outer join countries_cte as co
+         on cu.country_code = co.country_code left outer join currencies_cte as cr
          on co.currency_code = cr.currency_code
 )
 select*from joins1_cte
 
----dbt run -m sil_lic_trans_join
+---dbt run -m s_joins_trans

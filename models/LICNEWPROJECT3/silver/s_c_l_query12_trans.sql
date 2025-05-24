@@ -1,10 +1,10 @@
 ---12.Policies with nominees under 18 years
 
 with insurancepolicies_cte as(
-    select*from {{ ref('b_c_l_insurance_policies') }}
+    select*from {{ ref('brn_lic_stg_insurance_policies') }}
 ),
 nominees_cte as(
-    select*from {{ ref('b_c_l_nominees') }}
+    select*from {{ ref('brn_lic_stg_nominees') }}
 ),
 joins_query12_cte as(
     select ip.policy_name,n.nominee_id,n.name as nominee_name,n.date_of_birth

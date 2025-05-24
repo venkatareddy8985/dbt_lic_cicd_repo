@@ -1,10 +1,10 @@
 ---9.Policies with failed premium payments: s_query9.sql
 
 with insupoli_cte as(
-    select*from {{ ref('b_c_l_insurance_policies') }}
+    select*from {{ ref('brn_lic_stg_insurance_policies') }}
 ), 
 prempay_cte as(
-    select*from {{ ref('b_c_l_premium_payments') }}
+    select*from {{ ref('brn_lic_stg_premium_payments') }}
 ),
 joins_query9_cte as(
     SELECT DISTINCT ip.policy_name

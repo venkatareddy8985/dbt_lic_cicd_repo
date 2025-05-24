@@ -1,13 +1,13 @@
 ---11.List of approved claims with customer details
 
 with insurancepolicies_cte as(
-    select*from {{ ref('b_c_l_insurance_policies') }}
+    select*from {{ ref('brn_lic_stg_insurance_policies') }}
 ),
 customers_cte as(
-    select*from {{ ref('b_c_l_customers') }}
+    select*from {{ ref('brn_lic_stg_customers') }}
 ),
 claims_cte as(
-    select*from {{ ref('b_c_l_claims') }}
+    select*from {{ ref('brn_lic_stg_claims') }}
 ),
 joints_query11_cte as(
     select c.customer_name,ip.policy_type,ip.policy_name,cl.claim_id,cl.claim_amount
